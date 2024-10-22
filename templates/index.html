@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Search</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Customer X Squad Search</title>
 </head>
 <body>
     <h1>Customer X Squad Search</h1>
@@ -18,6 +17,8 @@
         {% for table in tables %}
             {{ table|safe }}
         {% endfor %}
+    {% else %}
+        <p>No results found. Please try another search.</p>
     {% endif %}
 </body>
 </html>
