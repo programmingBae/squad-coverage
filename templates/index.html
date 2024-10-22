@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Customer X Squad Search</h1>
+    <form action="/search" method="POST">
+        <input type="text" name="search_term" placeholder="Enter Market or ASEAN Market" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if search_term %}
+        <h2>Results for "{{ search_term }}":</h2>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
