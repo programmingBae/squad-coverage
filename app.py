@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the cleaned data
-data = pd.read_csv('cleaned_data.csv')
+data = pd.read_csv('cleaned_customer_squad_data.csv')
 
 @app.route('/')
 def index():
